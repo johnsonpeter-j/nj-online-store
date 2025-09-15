@@ -1,7 +1,7 @@
 const User = require("./models/User");
-const encryptPassword = require("./utils/encryptPassword");
+const encryptPassword = require("../utils/encryptPassword");
 
-const seedData = async () => {
+const seedUsers = async () => {
     try {
         // check if admin user already exists
         const count = await User.find({ email: process.env.ADMIN_EMAIL || "" }).countDocuments();
@@ -21,4 +21,4 @@ const seedData = async () => {
     }
 };
 
-module.exports = seedData;
+module.exports = seedUsers;

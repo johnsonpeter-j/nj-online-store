@@ -1,0 +1,12 @@
+{
+  "welcome": {
+    "subject": "Welcome to NJ Online Store 🎉",
+    "text": "Hi {{name}}, welcome to NJ Online Store! Your temporary password is: {{password}}",
+    "html": "<h3>Hi {{name}},</h3><p>Welcome to <b>NJ Online Store</b> 🚀</p><p>Your temporary password is: <b>{{password}}</b></p><p>Please log in and change it immediately for security.</p>"
+  },
+  "resetPassword": {
+    "subject": "Reset Your Password 🔑",
+    "text": "Hi {{name}}, click the link to reset your password: {{resetLink}}",
+    "html": "<h3>Hi {{name}},</h3><p>Click <a href='{{resetLink}}'>here</a> to reset your password.</p>"
+  }
+}

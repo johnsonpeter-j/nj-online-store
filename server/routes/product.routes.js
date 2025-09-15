@@ -4,14 +4,18 @@ const {
   getProducts,
   getProductById,
   updateProduct,
-  deleteProduct,
+  deleteProduct
 } = require("../controllers/product.controller");
-const { protect } = require("../middleware/authMiddleware"); // optional auth
+
+const { protect } = require("../middleware/authMiddleware"); // optional auth middleware
 
 const router = express.Router();
 
-router.get("/",protect, getProducts);
-router.get("/:id",protect, getProductById);
+// Public routes
+router.get("/", getProducts);
+router.get("/:id", getProductById);
+
+// Protected routes (admin only)
 router.post("/", protect, createProduct);
 router.put("/:id", protect, updateProduct);
 router.delete("/:id", protect, deleteProduct);

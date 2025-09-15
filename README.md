@@ -1,4 +1,4 @@
-# NJ Online Store Backend
+# NJ Online Store
 
 ## Project Description
 

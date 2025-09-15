@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 
 const userRoutes = require("./routes/user.routes");
 const authRoutes = require("./routes/auth.routes");
+const productRoutes = require("./routes/product.routes");
 
 const seedUsers = require("./seed/seedUsers");
 
@@ -17,9 +18,7 @@ const app = express();
 app.use(express.json());
 
 // CORS setup
-const allowedOrigins = process.env.CORS_ORIGINS
-  ? process.env.CORS_ORIGINS.split(",")
-  : ["http://localhost:3000"];
+const allowedOrigins = process.env.CORS_ORIGINS.split(",");
 
 app.use(
   cors({
@@ -32,6 +31,7 @@ app.use(
 // Routes
 app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
+app.use("/products", productRoutes);
 
 const PORT = process.env.PORT || 5000;
 

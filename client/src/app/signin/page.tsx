@@ -1,29 +1,11 @@
-"use client"
-
-import type React from "react"
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useRouter } from "next/navigation"
-import { useState } from "react"
 import { ThemeToggle } from "@/components/theme-toogle"
 
 export default function SignIn() {
-  const router = useRouter()
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleSignIn = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-
-    setTimeout(() => {
-      router.push("/dashboard")
-    }, 1000)
-  }
-
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
       <div className="absolute top-4 right-4">
@@ -38,7 +20,7 @@ export default function SignIn() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <form className="space-y-4" onSubmit={handleSignIn}>
+          <form className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm font-medium text-card-foreground">
                 Email
@@ -63,12 +45,8 @@ export default function SignIn() {
                 required
               />
             </div>
-            <Button
-              type="submit"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-              disabled={isLoading}
-            >
-              {isLoading ? "Signing In..." : "Sign In"}
+            <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              Sign In
             </Button>
           </form>
 
